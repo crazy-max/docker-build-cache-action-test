@@ -31,7 +31,7 @@ jobs:
           push: false
           load: false
           cache-from: type=local,src=/tmp/.buildx-cache
-          cache-to: type=local,mode=max,dest=/tmp/.buildx-cache
+          cache-to: type=local,mode=max,dest=/tmp/.buildx-cache-new
           target: base
       -
         name: Build prod image
@@ -43,7 +43,7 @@ jobs:
           push: false
           load: false
           cache-from: type=local,src=/tmp/.buildx-cache
-          cache-to: type=local,mode=max,dest=/tmp/.buildx-cache
+          cache-to: type=local,mode=max,dest=/tmp/.buildx-cache-new
           target: prod
       -
         name: Build image for testing
@@ -55,7 +55,7 @@ jobs:
           push: false
           load: false
           cache-from: type=local,src=/tmp/.buildx-cache
-          cache-to: type=local,mode=max,dest=/tmp/.buildx-cache
+          cache-to: type=local,mode=max,dest=/tmp/.buildx-cache-new
           target: test
       -
         # Temp fix
